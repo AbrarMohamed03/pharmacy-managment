@@ -41,7 +41,7 @@
         <div class="container-fluid justify-content-center">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">Home</a>
+                    <a class="nav-link" href="{{ route('Home') }}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="{{ route('Add') }}">Add Products</a>
@@ -59,7 +59,7 @@
                             <div class="row">
                                 <h2 class="header">Add New Product </h2>
 
-                                <form  method="post" action="{{ route('saveProduct') }}" accept-charset="UTF-8">
+                                <form  method="post" action="{{ route('SaveProduct') }}" accept-charset="UTF-8">
                                     {{ csrf_field() }}
                                     <div class="mb-3">
                                         <label class="form-label"><h5>Product Name :</h5></label>

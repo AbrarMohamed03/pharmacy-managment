@@ -41,10 +41,10 @@
         <div class="container-fluid justify-content-center">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">Home</a>
+                    <a class="nav-link" href="{{ route('Home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{ route('Add') }}">Add Products</a>
+                    <a class="nav-link " href="{{ route('Add') }}">Add Products</a>
                 </li>
             </ul>
         </div>
@@ -57,10 +57,10 @@
                     <div class="card shadow-0 border rounded-3">
                         <div class="card-body">
                             <div class="row">
-                                <h2 class="header">Edit Product </h2>
+                                <h2 class="header">Edit Product <h2>
 
                                 @foreach ($Products as $Product)
-                                <form  method="post" action="{{ route('updateProduct', $Product->id ) }}" accept-charset="UTF-8">
+                                <form  method="post" action="{{ route('UpdateProduct', $Product->id ) }}" accept-charset="UTF-8">
                                     {{ csrf_field() }}
                                     <div class="mb-3">
                                         <label class="form-label"><h5>Product Name :</h5></label>
@@ -75,14 +75,27 @@
                                     <div class="mb-3">
                                         <label class="form-label"><h5>Product Price :</h5></label>
                                         <input type="text" class="form-control" name="price" value="{{ $Product->price }}">
-                                    </div>
+                                    </div> 
+                                    <button type="submit" class="btn btn-primary">Save</button>
                                     
+                                </form>
+                            </div>
+                            <div class="row">
+                                <h2 class="header">Edit Quantity</h2>
+                                <h5 class="mb-1 me-1">Quantity On Stock : <b>{{ $Product->Quantity }}</b> </h5>
+                                <form  method="post" action="{{ route('AddQuantity', $Product->id ) }}" accept-charset="UTF-8" style="margin-top: 20px;">
                                     <div class="mb-3">
-                                        <label class="form-label"><h5>Product Quantity :</h5></label>
-                                        <input type="text" class="form-control" name="Quantity" value="{{ $Product->Quantity }}">
+                                        <label class="form-label"><h5>Add Quantity :</h5></label>
+                                        <input type="number" class="form-control" name="Added" >
                                     </div>
-                                    
-                                    <button type="submit" class="btn btn-primary">Edit</button>
+                                    <button type="submit" class="btn btn-success">Add</button>
+                                </form>
+                                <form  method="post" action="" accept-charset="UTF-8" style="margin-top: 20px;">
+                                    <div class="mb-3">
+                                        <label class="form-label"><h5>Remove Quantity :</h5></label>
+                                        <input type="number" class="form-control" name="Quantity" >
+                                    </div>
+                                    <button type="submit" class="btn btn-danger">Remove</button>
                                 </form>
                                 @endforeach
                             </div>
