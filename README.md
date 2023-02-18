@@ -67,19 +67,25 @@ You will need to have `Composer` and `npm` (Node Package Manager) installed on y
   php artisan migrate
 
 ```
-7. Seed the database:
+7. Run the storage ( to create `public/images` folder for save the Product images ):
+
+```bash
+  php artisan storage:link
+
+```
+8. Seed the database:
 
 ```bash
   php artisan db:seed
 
 ```
-8. Build the assets:
+9. Build the assets:
 
 ```bash
   npm run dev
 
 ```
-9. Start the development server:
+10. Start the development server:
 
 ```bash
   php artisan serve
