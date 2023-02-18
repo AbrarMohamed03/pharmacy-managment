@@ -17,9 +17,11 @@ return new class extends Migration
             $table->string('desc');
             $table->float('price');
             $table->integer('Quantity');
+            $table->string('image_path');
             $table->timestamps();
         });
-    }
+}
+
 
     /**
      * Reverse the migrations.

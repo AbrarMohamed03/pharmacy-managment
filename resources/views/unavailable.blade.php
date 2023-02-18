@@ -30,13 +30,13 @@
         <div class="container-fluid justify-content-center">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{ route('Home') }}">Available Products</a>
+                    <a class="nav-link " href="{{ route('Home') }}">Available Products</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('Add') }}">Add Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('Unavailable') }}">Unavailable Products</a>
+                    <a class="nav-link active" href="{{ route('Unavailable') }}">Unavailable Products</a>
                 </li>
             </ul>
         </div>

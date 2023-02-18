@@ -37,14 +37,17 @@
 
 <body class="antialiased">
     
-    <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+<nav class="navbar navbar-expand-lg bg-body-tertiary ">
         <div class="container-fluid justify-content-center">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('Home') }}">Home</a>
+                    <a class="nav-link" href="{{ route('Home') }}">Available Products</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="{{ route('Add') }}">Add Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="{{ route('Unavailable') }}">Unavailable Products</a>
                 </li>
             </ul>
         </div>
@@ -59,7 +62,7 @@
                             <div class="row">
                                 <h2 class="header">Add New Product </h2>
 
-                                <form  method="post" action="{{ route('SaveProduct') }}" accept-charset="UTF-8">
+                                <form  method="post" enctype="multipart/form-data" action="{{ route('SaveProduct') }}" accept-charset="UTF-8">
                                     {{ csrf_field() }}
                                     <div class="mb-3">
                                         <label class="form-label"><h5>Product Name :</h5></label>
@@ -75,12 +78,17 @@
                                         <label class="form-label"><h5>Product Price :</h5></label>
                                         <input type="text" class="form-control" name="price" >
                                     </div>
+
                                     
                                     <div class="mb-3">
                                         <label class="form-label"><h5>Product Quantity :</h5></label>
                                         <input type="text" class="form-control" name="Quantity" >
                                     </div>
                                     
+                                    <div class="mb-3">
+                                        <label class="form-label"><h5>Product Image :</h5></label>
+                                        <input type="file" class="form-control" name="image" >
+                                    </div>
                                     <button type="submit" class="btn btn-primary">Add</button>
                                 </form>
 

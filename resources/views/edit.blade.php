@@ -41,10 +41,13 @@
         <div class="container-fluid justify-content-center">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('Home') }}">Home</a>
+                    <a class="nav-link " href="{{ route('Home') }}">Available Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="{{ route('Add') }}">Add Products</a>
+                    <a class="nav-link" href="{{ route('Add') }}">Add Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="{{ route('Unavailable') }}">Unavailable Products</a>
                 </li>
             </ul>
         </div>
@@ -83,17 +86,21 @@
                             <div class="row">
                                 <h2 class="header">Edit Quantity</h2>
                                 <h5 class="mb-1 me-1">Quantity On Stock : <b>{{ $Product->Quantity }}</b> </h5>
+
                                 <form  method="post" action="{{ route('AddQuantity', $Product->id ) }}" accept-charset="UTF-8" style="margin-top: 20px;">
+                                {{ csrf_field() }}
                                     <div class="mb-3">
                                         <label class="form-label"><h5>Add Quantity :</h5></label>
                                         <input type="number" class="form-control" name="Added" >
                                     </div>
                                     <button type="submit" class="btn btn-success">Add</button>
                                 </form>
-                                <form  method="post" action="" accept-charset="UTF-8" style="margin-top: 20px;">
+                                
+                                <form  method="post" action="{{ route('RemoveQuantity', $Product->id ) }}" accept-charset="UTF-8" style="margin-top: 20px;">
+                                {{ csrf_field() }}
                                     <div class="mb-3">
                                         <label class="form-label"><h5>Remove Quantity :</h5></label>
-                                        <input type="number" class="form-control" name="Quantity" >
+                                        <input type="number" class="form-control" name="Removed" >
                                     </div>
                                     <button type="submit" class="btn btn-danger">Remove</button>
                                 </form>
