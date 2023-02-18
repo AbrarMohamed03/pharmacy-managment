@@ -20,10 +20,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Prerequisites
 
-You will need to have `Composer` and `npm` (Node Package Manager) installed on your machine in order to run this project. You can check if you have these installed by running the following commands in your terminal:
+You will need to have `Composer` installed on your machine in order to run this project. You can check if you have these installed by running the following commands in your terminal:
 ```bash
   composer -v
-  npm -v
 
 ```
 
@@ -46,7 +45,6 @@ You will need to have `Composer` and `npm` (Node Package Manager) installed on y
 
 ```bash
   composer install
-  npm install
 
 ```
 4. Copy the `.env.example` file to `.env` and configure your database settings
@@ -79,13 +77,7 @@ You will need to have `Composer` and `npm` (Node Package Manager) installed on y
   php artisan db:seed
 
 ```
-9. Build the assets:
-
-```bash
-  npm run dev
-
-```
-10. Start the development server:
+9. Start the development server:
 
 ```bash
   php artisan serve
