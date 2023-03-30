@@ -71,13 +71,7 @@ You will need to have `Composer` installed on your machine in order to run this 
   php artisan storage:link
 
 ```
-8. Seed the database:
-
-```bash
-  php artisan db:seed
-
-```
-9. Start the development server:
+8. Start the development server:
 
 ```bash
   php artisan serve
